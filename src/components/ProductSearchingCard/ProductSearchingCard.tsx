@@ -1,7 +1,7 @@
 import { Input } from '../lib/Input/Input';
-import styles from './SearchingCard.module.scss';
+import styles from './ProductSearchingCard.module.scss';
 
-export const SearchingCard = () => {
+export const ProductSearchingCard = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>

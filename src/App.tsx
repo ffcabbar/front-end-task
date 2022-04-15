@@ -1,5 +1,5 @@
 import styles from './App.module.scss';
-import { SearchingCard } from './components';
+import { ProductSearchingCard } from './components';
 
 const App = () => {
   return (
@@ -23,7 +23,7 @@ const App = () => {
 
       <main className={styles.main}>
         <div>
-          <SearchingCard />
+          <ProductSearchingCard />
         </div>
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Est porro totam dicta eaque?

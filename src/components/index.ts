@@ -1,3 +1,3 @@
-import { SearchingCard } from './SearchingCard/SearchingCard';
+import { ProductSearchingCard } from './ProductSearchingCard/ProductSearchingCard';
 
-export { SearchingCard };
+export { ProductSearchingCard };
