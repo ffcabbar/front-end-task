@@ -1,14 +1,27 @@
 import styles from './App.module.scss';
-import { ProductList, ProductSearchingCard } from './components';
+import { ProductList, ProductSearchingCard, Loader } from './components';
+import { useFetch } from './hooks/useFetch';
 
 const App = () => {
+  const { products, loading, error } = useFetch();
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <>Error...{error}</>;
+  }
+
   return (
     <div className={styles.container}>
-      <div className={styles.titleSection}>
-        <h3>Create Demand</h3>
-        <p>Search the product you need here. Use tags to find any alternative.</p>
-      </div>
-      {/* 
+      {products && (
+        <>
+          <div className={styles.titleSection}>
+            <h3>Create Demand</h3>
+            <p>Search the product you need here. Use tags to find any alternative.</p>
+          </div>
+          {/* 
       <Tabs className={styles.tabsWrapper}>
         <TabList className={styles.tabList}>
           <Tab>Title 1</Tab>
@@ -21,19 +34,21 @@ const App = () => {
         </TabPanel>
       </Tabs> */}
 
-      <main className={styles.main}>
-        <div className={styles.leftSection}>
-          <ProductSearchingCard />
-          <div className={styles.productList}>
-            <ProductList />
-          </div>
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est porro totam dicta eaque?
-          Tempore, non repellendus, incidunt esse possimus velit, saepe illum obcaecati deserunt
-          nobis vitae numquam delectus nam explicabo.
-        </div>
-      </main>
+          <main className={styles.main}>
+            <div className={styles.leftSection}>
+              <ProductSearchingCard />
+              <div className={styles.productList}>
+                <ProductList />
+              </div>
+            </div>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est porro totam dicta eaque?
+              Tempore, non repellendus, incidunt esse possimus velit, saepe illum obcaecati deserunt
+              nobis vitae numquam delectus nam explicabo.
+            </div>
+          </main>
+        </>
+      )}
     </div>
   );
 };
