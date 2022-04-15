@@ -1,5 +1,5 @@
 import styles from './App.module.scss';
-import { ProductSearchingCard } from './components';
+import { ProductList, ProductSearchingCard } from './components';
 
 const App = () => {
   return (
@@ -22,8 +22,11 @@ const App = () => {
       </Tabs> */}
 
       <main className={styles.main}>
-        <div>
+        <div className={styles.leftSection}>
           <ProductSearchingCard />
+          <div className={styles.productList}>
+            <ProductList />
+          </div>
         </div>
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Est porro totam dicta eaque?

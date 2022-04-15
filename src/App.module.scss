@@ -37,3 +37,12 @@
   grid-template-columns: 2fr 1fr;
   gap: 1rem;
 }
+.leftSection {
+  display: grid;
+  gap: 1rem;
+
+  .productList {
+    display: grid;
+    gap: 0.5rem;
+  }
+}
