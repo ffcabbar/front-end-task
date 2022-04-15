@@ -13,6 +13,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
+    "react-tabs": "^4.2.0",
     "sass": "^1.50.0",
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
@@ -44,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-tabs": "^2.3.4",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "prettier": "2.6.2"
