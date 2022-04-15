@@ -1,0 +1,28 @@
+.wrapper {
+  span {
+    svg {
+      pointer-events: none;
+      position: relative;
+      width: 1rem;
+      height: 1rem;
+      fill: #a4a4a4;
+      top: 32px;
+      right: -6px;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  background: #f5f6f7;
+  border: 1px solid #f0f2f4;
+  border-radius: 2px;
+  outline-color: #12b8ff;
+  padding: 10px 0px 10px 30px;
+  font-size: 14px;
+  color: #3c4858;
+
+  &::placeholder {
+    color: #8492a6;
+  }
+}
