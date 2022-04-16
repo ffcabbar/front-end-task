@@ -4,6 +4,7 @@ import { IProduct } from '../common/types';
 
 export const useFetch = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<unknown>(null);
 
@@ -12,7 +13,9 @@ export const useFetch = () => {
       setLoading(true);
       try {
         const res = await getProducts();
+        const categories = Array.from(new Set(res.map((r) => r.category)));
         setProducts(res);
+        setCategories(categories);
       } catch (err) {
         setError(err);
       } finally {
@@ -23,5 +26,5 @@ export const useFetch = () => {
     fetchProducts();
   }, []);
 
-  return { products, loading, error };
+  return { products, categories, loading, error };
 };

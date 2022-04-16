@@ -1,7 +1,11 @@
 import { Input } from '../lib/Input/Input';
 import styles from './ProductSearchingCard.module.scss';
 
-export const ProductSearchingCard = () => {
+type Props = {
+  categories: string[];
+};
+
+export const ProductSearchingCard = ({ categories }: Props) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
@@ -9,10 +13,14 @@ export const ProductSearchingCard = () => {
       </div>
       <div className={styles.divider}></div>
       <div className={styles.main}>
-        <div>
-          <label>
-            <input type="checkbox" value="Bike" /> Daily Business
-          </label>
+        <div className={styles.categories}>
+          {categories.map((category, index) => {
+            return (
+              <label key={index}>
+                <input type="checkbox" value={category} /> {category}
+              </label>
+            );
+          })}
         </div>
         <div>
           <Input

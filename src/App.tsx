@@ -3,7 +3,7 @@ import { ProductList, ProductSearchingCard, Loader } from './components';
 import { useFetch } from './hooks/useFetch';
 
 const App = () => {
-  const { products, loading, error } = useFetch();
+  const { products, categories, loading, error } = useFetch();
 
   if (loading) {
     return <Loader />;
@@ -36,7 +36,7 @@ const App = () => {
 
           <main className={styles.main}>
             <div className={styles.leftSection}>
-              <ProductSearchingCard />
+              <ProductSearchingCard categories={categories} />
               <div className={styles.productList}>
                 <ProductList />
               </div>

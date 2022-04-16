@@ -23,23 +23,27 @@
 .main {
   margin-top: 3rem;
 
-  div {
-    &:first-child {
-      input[type='checkbox'] {
-        cursor: pointer;
-        width: 16px;
-        height: 16px;
-        margin: 0;
-        vertical-align: text-bottom;
-        margin-right: 8px;
-        accent-color: #0d9cd9;
-      }
-      label {
-        cursor: pointer;
-        font-weight: 500;
-        font-size: 13px;
-        color: #8492a6;
-      }
+  .categories {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    input[type='checkbox'] {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+      margin: 0;
+      vertical-align: text-bottom;
+      margin-right: 8px;
+      accent-color: #0d9cd9;
+    }
+    label {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 13px;
+      color: #8492a6;
     }
   }
 }
