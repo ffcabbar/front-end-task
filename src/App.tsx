@@ -1,5 +1,6 @@
 import styles from './App.module.scss';
-import { ProductList, ProductSearching, Loader } from './components';
+import { ProductList, ProductSearching, ProductDetail, Loader } from './components';
+import {} from './components/ProductDetail/ProductDetail';
 import { useFetch } from './hooks/useFetch';
 
 const App = () => {
@@ -42,9 +43,7 @@ const App = () => {
               </div>
             </div>
             <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est porro totam dicta eaque?
-              Tempore, non repellendus, incidunt esse possimus velit, saepe illum obcaecati deserunt
-              nobis vitae numquam delectus nam explicabo.
+              <ProductDetail />
             </div>
           </main>
         </>
