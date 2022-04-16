@@ -57,6 +57,8 @@ const App = () => {
                 <div>{selectedProduct && <ProductDetail selectedProduct={selectedProduct} />}</div>
               </main>
             </TabPanel>
+            <TabPanel></TabPanel>
+            <TabPanel></TabPanel>
           </Tabs>
         </>
       )}
