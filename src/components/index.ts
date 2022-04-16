@@ -1,4 +1,4 @@
-import { ProductList } from './ProductList/ProdcutList';
+import { ProductList } from './ProductList/ProductList';
 import { ProductSearchingCard } from './ProductSearchingCard/ProductSearchingCard';
 import { Loader } from './Loader/Loader';
 

@@ -2,7 +2,7 @@ export const data = [
   {
     id: '0360c930-fe28-4993-b9de-16a24c904bd1',
     productName: 'Foxit software PhantomPDF Standard',
-    tags: ['PDF, Change, Create, Maintenance, Business, FoxIT'],
+    tags: ['PDF', 'Change', 'Create', 'Maintenance', 'Business', 'FoxIT'],
     category: 'Daily Business',
     manufacturerUrl: 'https://www.foxitsoftware.com/de/pdf-editor',
     description: [

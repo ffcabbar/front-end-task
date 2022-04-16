@@ -38,7 +38,7 @@ const App = () => {
             <div className={styles.leftSection}>
               <ProductSearchingCard categories={categories} />
               <div className={styles.productList}>
-                <ProductList />
+                <ProductList products={products} />
               </div>
             </div>
             <div>
