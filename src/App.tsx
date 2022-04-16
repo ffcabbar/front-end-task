@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import styles from './App.module.scss';
 import { IProduct } from './common/types';
 import { ProductList, ProductSearching, ProductDetail, Loader } from './components';
@@ -27,34 +28,36 @@ const App = () => {
             <h3>Create Demand</h3>
             <p>Search the product you need here. Use tags to find any alternative.</p>
           </div>
-          {/* 
-      <Tabs className={styles.tabsWrapper}>
-        <TabList className={styles.tabList}>
-          <Tab>Title 1</Tab>
-          <Tab disabled>Title 2</Tab>
-          <Tab disabled>Title 3</Tab>
-        </TabList>
 
-        <TabPanel>
-          <h2>Any content 1</h2>
-        </TabPanel>
-      </Tabs> */}
-
-          <main className={styles.main}>
-            <div className={styles.leftSection}>
-              <ProductSearching categories={categories} setSearchTerm={setSearchTerm} selectedCategories={selectedCategories} setSelectedCategories={setSelectedCategories} />
-              <div className={styles.productList}>
-                <ProductList
-                  products={products}
-                  selectedProduct={selectedProduct}
-                  setSelectedProduct={setSelectedProduct}
-                  selectedCategories={selectedCategories}
-                  searchTerm={searchTerm}
-                />
-              </div>
-            </div>
-            <div>{selectedProduct && <ProductDetail selectedProduct={selectedProduct} />}</div>
-          </main>
+          <Tabs className={styles.tabs}>
+            <TabList className={styles.tabList}>
+              <Tab>1 Product</Tab>
+              <Tab disabled>2 Addresses</Tab>
+              <Tab disabled>3 Overview</Tab>
+            </TabList>
+            <TabPanel>
+              <main className={styles.main}>
+                <div className={styles.leftSection}>
+                  <ProductSearching
+                    categories={categories}
+                    setSearchTerm={setSearchTerm}
+                    selectedCategories={selectedCategories}
+                    setSelectedCategories={setSelectedCategories}
+                  />
+                  <div className={styles.productList}>
+                    <ProductList
+                      products={products}
+                      selectedProduct={selectedProduct}
+                      setSelectedProduct={setSelectedProduct}
+                      selectedCategories={selectedCategories}
+                      searchTerm={searchTerm}
+                    />
+                  </div>
+                </div>
+                <div>{selectedProduct && <ProductDetail selectedProduct={selectedProduct} />}</div>
+              </main>
+            </TabPanel>
+          </Tabs>
         </>
       )}
     </div>
