@@ -1,5 +1,5 @@
 import styles from './App.module.scss';
-import { ProductList, ProductSearchingCard, Loader } from './components';
+import { ProductList, ProductSearching, Loader } from './components';
 import { useFetch } from './hooks/useFetch';
 
 const App = () => {
@@ -36,7 +36,7 @@ const App = () => {
 
           <main className={styles.main}>
             <div className={styles.leftSection}>
-              <ProductSearchingCard categories={categories} />
+              <ProductSearching categories={categories} />
               <div className={styles.productList}>
                 <ProductList products={products} />
               </div>

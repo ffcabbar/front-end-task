@@ -1,11 +1,11 @@
 import { Input } from '../lib/Input/Input';
-import styles from './ProductSearchingCard.module.scss';
+import styles from './ProductSearching.module.scss';
 
 type Props = {
   categories: string[];
 };
 
-export const ProductSearchingCard = ({ categories }: Props) => {
+export const ProductSearching = ({ categories }: Props) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
