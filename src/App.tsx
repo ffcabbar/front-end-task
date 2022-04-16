@@ -8,6 +8,9 @@ const App = () => {
   const { products, categories, loading, error } = useFetch();
   const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
 
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
   if (loading) {
     return <Loader />;
   }
@@ -39,12 +42,14 @@ const App = () => {
 
           <main className={styles.main}>
             <div className={styles.leftSection}>
-              <ProductSearching categories={categories} />
+              <ProductSearching categories={categories} setSearchTerm={setSearchTerm} selectedCategories={selectedCategories} setSelectedCategories={setSelectedCategories} />
               <div className={styles.productList}>
                 <ProductList
                   products={products}
                   selectedProduct={selectedProduct}
                   setSelectedProduct={setSelectedProduct}
+                  selectedCategories={selectedCategories}
+                  searchTerm={searchTerm}
                 />
               </div>
             </div>

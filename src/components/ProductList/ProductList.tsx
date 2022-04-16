@@ -7,12 +7,29 @@ type Props = {
   products: IProduct[];
   selectedProduct: IProduct | null;
   setSelectedProduct: React.Dispatch<React.SetStateAction<IProduct | null>>;
+  selectedCategories: string[];
+  searchTerm: string;
 };
 
-export const ProductList = ({ products, selectedProduct, setSelectedProduct }: Props) => {
+export const ProductList = ({
+  products,
+  selectedProduct,
+  setSelectedProduct,
+  selectedCategories,
+  searchTerm
+}: Props) => {
+  const listProducts = (products: IProduct[]): IProduct[] => {
+    if (selectedCategories.length) {
+      return products
+        .filter((f) => f.productName.toLowerCase().includes(searchTerm.toLowerCase()))
+        .filter((f) => selectedCategories.includes(f.category));
+    }
+    return products.filter((f) => f.productName.toLowerCase().includes(searchTerm.toLowerCase()));
+  };
+
   return (
     <>
-      {products.map((product) => {
+      {listProducts(products).map((product) => {
         return (
           <div
             className={`${styles.wrapper} 

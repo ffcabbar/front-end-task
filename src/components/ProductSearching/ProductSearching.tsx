@@ -3,13 +3,36 @@ import styles from './ProductSearching.module.scss';
 
 type Props = {
   categories: string[];
+  selectedCategories: string[];
+  setSelectedCategories: React.Dispatch<React.SetStateAction<string[]>>;
+
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export const ProductSearching = ({ categories }: Props) => {
+export const ProductSearching = ({
+  categories,
+  setSearchTerm,
+  selectedCategories,
+  setSelectedCategories
+}: Props) => {
+  const handleSearchChange = (e: any) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSelectCategory = (e: any) => {
+    const hasSameCategory = selectedCategories.includes(e.target.value);
+    if (hasSameCategory) {
+      const categories = selectedCategories.filter((f) => f !== e.target.value);
+      setSelectedCategories(categories);
+    } else {
+      setSelectedCategories([...selectedCategories, e.target.value]);
+    }
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
-        <h4>I'm looking for</h4>
+        <h4>I'm looking for...</h4>
       </div>
       <div className={styles.divider}></div>
       <div className={styles.main}>
@@ -17,7 +40,8 @@ export const ProductSearching = ({ categories }: Props) => {
           {categories.map((category, index) => {
             return (
               <label key={index}>
-                <input type="checkbox" value={category} /> {category}
+                <input type="checkbox" value={category} onChange={handleSelectCategory} />
+                {category}
               </label>
             );
           })}
@@ -25,6 +49,7 @@ export const ProductSearching = ({ categories }: Props) => {
         <div>
           <Input
             placeholder="Search..."
+            onChange={handleSearchChange}
             icon={
               <svg
                 width="16"
