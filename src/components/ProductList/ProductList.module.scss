@@ -24,11 +24,6 @@
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
-
-    .hasNoTags {
-      font-size: 0.9rem;
-      color: #8492a6;
-    }
   }
   .category {
     font-weight: 400;
@@ -37,4 +32,7 @@
     flex-basis: 25%;
     text-align: end;
   }
+}
+.selected {
+  border: 1px solid #12b8ff;
 }

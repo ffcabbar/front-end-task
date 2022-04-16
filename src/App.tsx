@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import styles from './App.module.scss';
+import { IProduct } from './common/types';
 import { ProductList, ProductSearching, ProductDetail, Loader } from './components';
-import {} from './components/ProductDetail/ProductDetail';
 import { useFetch } from './hooks/useFetch';
 
 const App = () => {
   const { products, categories, loading, error } = useFetch();
+  const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
 
   if (loading) {
     return <Loader />;
@@ -39,12 +41,14 @@ const App = () => {
             <div className={styles.leftSection}>
               <ProductSearching categories={categories} />
               <div className={styles.productList}>
-                <ProductList products={products} />
+                <ProductList
+                  products={products}
+                  selectedProduct={selectedProduct}
+                  setSelectedProduct={setSelectedProduct}
+                />
               </div>
             </div>
-            <div>
-              <ProductDetail />
-            </div>
+            <div>{selectedProduct && <ProductDetail selectedProduct={selectedProduct} />}</div>
           </main>
         </>
       )}
