@@ -1,16 +1,11 @@
-import { useState } from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import styles from './App.module.scss';
-import { IProduct } from './common/types';
 import { ProductList, ProductSearching, ProductDetail, Loader } from './components';
 import { useFetch } from './hooks/useFetch';
+import { productStore } from './store/productStore';
 
 const App = () => {
   const { products, categories, loading, error } = useFetch();
-  const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
-
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [searchTerm, setSearchTerm] = useState('');
 
   if (loading) {
     return <Loader />;
@@ -40,21 +35,20 @@ const App = () => {
                 <div className={styles.leftSection}>
                   <ProductSearching
                     categories={categories}
-                    setSearchTerm={setSearchTerm}
-                    selectedCategories={selectedCategories}
-                    setSelectedCategories={setSelectedCategories}
+                    productStore={productStore}
                   />
                   <div className={styles.productList}>
                     <ProductList
                       products={products}
-                      selectedProduct={selectedProduct}
-                      setSelectedProduct={setSelectedProduct}
-                      selectedCategories={selectedCategories}
-                      searchTerm={searchTerm}
+                      productStore={productStore}
                     />
                   </div>
                 </div>
-                <div>{selectedProduct && <ProductDetail selectedProduct={selectedProduct} />}</div>
+                <div>
+                  <ProductDetail 
+                    productStore={productStore} 
+                  />
+                </div>
               </main>
             </TabPanel>
             <TabPanel></TabPanel>

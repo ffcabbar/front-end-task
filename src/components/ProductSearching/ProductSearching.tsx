@@ -1,30 +1,25 @@
+import { observer } from 'mobx-react';
+import { ProductStore } from '../../store/productStore';
 import { Input } from '../lib/Input/Input';
 import styles from './ProductSearching.module.scss';
 
 type Props = {
   categories: string[];
-  selectedCategories: string[];
-  setSelectedCategories: React.Dispatch<React.SetStateAction<string[]>>;
-  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  productStore: ProductStore;
 };
 
-export const ProductSearching = ({
-  categories,
-  setSearchTerm,
-  selectedCategories,
-  setSelectedCategories
-}: Props) => {
+export const ProductSearching = observer(({ categories, productStore }: Props) => {
   const handleSearchChange = (e: any) => {
-    setSearchTerm(e.target.value);
+    productStore.setSearchTerm(e.target.value);
   };
 
   const handleSelectCategory = (e: any) => {
-    const hasSameCategory = selectedCategories.includes(e.target.value);
+    const value = e.target.value;
+    const hasSameCategory = productStore.categories.includes(value);
     if (hasSameCategory) {
-      const categories = selectedCategories.filter((f) => f !== e.target.value);
-      setSelectedCategories(categories);
+      productStore.removeCategory(value);
     } else {
-      setSelectedCategories([...selectedCategories, e.target.value]);
+      productStore.addCategory(value);
     }
   };
 
@@ -68,4 +63,4 @@ export const ProductSearching = ({
       </div>
     </div>
   );
-};
+});

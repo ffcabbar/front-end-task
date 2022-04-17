@@ -1,30 +1,25 @@
+import { observer } from 'mobx-react';
 import { IProduct } from '../../common/types';
+import { ProductStore } from '../../store/productStore';
 import { Badge } from '../lib/Badge/Badge';
 import { NoDataMessage } from '../lib/NoDataMessage/NoDataMessage';
 import styles from './ProductList.module.scss';
 
 type Props = {
   products: IProduct[];
-  selectedProduct: IProduct | null;
-  setSelectedProduct: React.Dispatch<React.SetStateAction<IProduct | null>>;
-  selectedCategories: string[];
-  searchTerm: string;
+  productStore: ProductStore;
 };
 
-export const ProductList = ({
-  products,
-  selectedProduct,
-  setSelectedProduct,
-  selectedCategories,
-  searchTerm
-}: Props) => {
+export const ProductList = observer(({ products, productStore }: Props) => {
   const listProducts = (products: IProduct[]): IProduct[] => {
-    if (selectedCategories.length) {
+    if (productStore.categories.length) {
       return products
-        .filter((f) => f.productName.toLowerCase().includes(searchTerm.toLowerCase()))
-        .filter((f) => selectedCategories.includes(f.category));
+        .filter((f) => f.productName.toLowerCase().includes(productStore.searchTerm.toLowerCase()))
+        .filter((f) => productStore.categories.includes(f.category));
     }
-    return products.filter((f) => f.productName.toLowerCase().includes(searchTerm.toLowerCase()));
+    return products.filter((f) =>
+      f.productName.toLowerCase().includes(productStore.searchTerm.toLowerCase())
+    );
   };
 
   return (
@@ -33,9 +28,9 @@ export const ProductList = ({
         return (
           <div
             className={`${styles.wrapper} 
-            ${product.id === selectedProduct?.id ? styles.selected : ''}`}
+            ${product.id === productStore.selectedProduct?.id ? styles.selected : ''}`}
             key={product.id}
-            onClick={() => setSelectedProduct(product)}
+            onClick={() => productStore.setSelectedProduct(product)}
           >
             <div>
               <div className={styles.name}>{product.productName}</div>
@@ -55,4 +50,4 @@ export const ProductList = ({
       })}
     </>
   );
-};
+});
