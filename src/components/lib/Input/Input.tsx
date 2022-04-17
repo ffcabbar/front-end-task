@@ -11,8 +11,8 @@ type Props = InputProps & A;
 export const Input = ({ icon, ...rest }: Props) => {
   return (
     <div className={styles.wrapper}>
-      {icon && <span>{icon}</span>}
-      <input className={styles.input} {...rest} />
+      {icon && <span role="figure">{icon}</span>}
+      <input role="searchbox" className={styles.input} {...rest} />
     </div>
   );
 };
