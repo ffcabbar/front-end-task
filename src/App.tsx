@@ -20,8 +20,10 @@ const App = () => {
       {products && (
         <>
           <div className={styles.titleSection}>
-            <h3>Create Demand</h3>
-            <p>Search the product you need here. Use tags to find any alternative.</p>
+            <h3 role='contentinfo'>Create Demand</h3>
+            <p>
+              Search the product you need here. Use tags to find any alternative.
+            </p>
           </div>
 
           <Tabs className={styles.tabs}>
