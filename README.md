@@ -15,10 +15,18 @@
 
 ## Build
 
-> You'll need [Node](https://nodejs.org/en/)
-
 - run `yarn` or `npm i` to install dependencies
 - run `yarn build` or `npm run build` to build app for production
+
+## Test
+
+- run `yarn` or `npm i` to install dependencies
+- run `yarn test` or `npm run test` to test app
+
+## e2e Test
+
+- run `yarn` or `npm i` to install dependencies
+- run `yarn e2e-test` or `npm run e2e-test` to test app
 
 ## Data
 
