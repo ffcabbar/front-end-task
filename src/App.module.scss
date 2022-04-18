@@ -21,14 +21,14 @@
 
   h3 {
     font-size: 18px;
-    color: #3c4858;
+    color: var(--color-black);
     font-weight: 500;
     margin-bottom: 6px;
   }
 
   p {
     font-size: 14px;
-    color: #8492a6;
+    color: var(--color-gray-400);
     margin: 0;
   }
 }
@@ -59,13 +59,13 @@
       padding: 20px 2px;
       font-weight: 500;
       font-size: 14px;
-      color: #12b8ff;
+      color: var(--color-primary);
       cursor: pointer;
       border-bottom: 1px solid;
       padding: 0.8rem 2.2rem;
 
       &:nth-last-child(-n + 2) {
-        color: #dadee4;
+        color: var(--color-gray-200);
         cursor: not-allowed;
       }
     }

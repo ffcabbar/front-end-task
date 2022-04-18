@@ -5,7 +5,7 @@
       position: relative;
       width: 1rem;
       height: 1rem;
-      fill: #a4a4a4;
+      fill: var(--color-gray-500);
       top: 32px;
       right: -6px;
     }
@@ -14,15 +14,15 @@
 
 .input {
   width: 100%;
-  background: #f5f6f7;
-  border: 1px solid #f0f2f4;
+  background: var(--color-gray-300);
+  border: 1px solid var(--color-gray-100);
   border-radius: 2px;
-  outline-color: #12b8ff;
+  outline-color: var(--color-primary);
   padding: 10px 0px 10px 30px;
   font-size: 14px;
-  color: #3c4858;
+  color: var(--color-black);
 
   &::placeholder {
-    color: #8492a6;
+    color: var(--color-gray-400);
   }
 }

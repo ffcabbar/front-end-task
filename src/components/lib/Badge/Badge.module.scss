@@ -1,7 +1,7 @@
 .badge {
-  background: rgb(18, 184, 255, 0.15);
+  background: var(--color-secondary);
   border-radius: 4px;
-  color: #12b8ff;
+  color: var(--color-primary);
   width: fit-content;
   display: flex;
   align-items: center;
