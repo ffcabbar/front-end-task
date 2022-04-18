@@ -6,6 +6,16 @@
 
 ![gif](https://user-images.githubusercontent.com/34713212/163764366-dfca7494-79b5-4317-a459-211e6eddd907.gif)
 
+## Resources that was used for the project
+- https://testing-library.com/docs/example-input-event/
+- https://levelup.gitconnected.com/testing-a-custom-react-hook-21ae732228b7
+- https://robertmarshall.dev/blog/react-jest-tests-failing-using-lottie-js-solved/
+- https://www.digitalocean.com/community/tutorials/how-to-write-snapshot-tests-for-react-components-with-jest
+- https://jestjs.io/docs/snapshot-testing
+
+## Encountered problems that was shared on https://stackoverflow.com/
+- https://stackoverflow.com/questions/71905943/how-can-i-test-the-custom-fetch-hook-with-dummy-data
+
 ## Develop
 
 > You'll need [Node](https://nodejs.org/en/)
