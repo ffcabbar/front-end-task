@@ -41,5 +41,10 @@ Data is available in the repository
 > [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 - [React](https://reactjs.org/) - UI library
+- [mobx-react](https://mobx.js.org/react-integration.html) - Simple, scalable state management
+- [sass](https://sass-lang.com/) - Sass is the most mature, stable, and powerful professional grade CSS extension language in the world
 - [husky](https://typicode.github.io/husky/#/) - Modern native git hooks made easy
 - [lint-staged](https://github.com/okonet/lint-staged) - Run linters against staged git files and don't let 💩 slip into your code base!
+- [cypress](https://www.cypress.io/) - Fast, easy and reliable testing for anything that runs in a browser
+- [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/) - Simple and complete testing utilities that encourage good testing practices
+- [react-test-renderer](https://reactjs.org/docs/test-renderer.html) - This package provides an experimental React renderer that can be used to render React components to pure JavaScript objects
