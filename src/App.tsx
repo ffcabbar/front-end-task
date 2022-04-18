@@ -16,7 +16,7 @@ const App = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid='container'>
       {products && (
         <>
           <div className={styles.titleSection}>

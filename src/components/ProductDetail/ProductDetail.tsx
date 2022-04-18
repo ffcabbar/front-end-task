@@ -13,7 +13,7 @@ export const ProductDetail = observer(({ productStore }: Props) => {
   return (
     <>
       {productStore.selectedProduct && (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} data-testid={`product-detail-${productStore.selectedProduct.id}`}>
           <div className={styles.title}>
             <h4>Product Details</h4>
           </div>
@@ -35,7 +35,7 @@ export const ProductDetail = observer(({ productStore }: Props) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button>Go to Manufacturer</Button>
+                <Button data-testid={`button-${productStore.selectedProduct.id}`}>Go to Manufacturer</Button>
               </a>
             </div>
             <div className={styles.productDescription}>

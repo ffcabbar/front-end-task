@@ -31,6 +31,7 @@ export const ProductList = observer(({ products, productStore }: Props) => {
             ${product.id === productStore.selectedProduct?.id ? styles.selected : ''}`}
             key={product.id}
             onClick={() => productStore.setSelectedProduct(product)}
+            data-testid={`product-list-${product.id}`}
           >
             <div>
               <div className={styles.name}>{product.productName}</div>

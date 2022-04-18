@@ -24,7 +24,7 @@ export const ProductSearching = observer(({ categories, productStore }: Props) =
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid='product-searching'>
       <div className={styles.title}>
         <h4>I'm looking for...</h4>
       </div>
@@ -33,7 +33,7 @@ export const ProductSearching = observer(({ categories, productStore }: Props) =
         <div className={styles.categories}>
           {categories.map((category, index) => {
             return (
-              <label key={index}>
+              <label key={index} data-testid={`checkbox-${category}`}>
                 <input type="checkbox" value={category} onChange={handleSelectCategory} />
                 {category}
               </label>
@@ -42,6 +42,7 @@ export const ProductSearching = observer(({ categories, productStore }: Props) =
         </div>
         <div>
           <Input
+            data-testid='search-box'
             placeholder="Search..."
             onChange={handleSearchChange}
             icon={

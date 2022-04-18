@@ -28,7 +28,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "e2e-test": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -49,8 +50,10 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.2",
     "@types/react-tabs": "^2.3.4",
     "@types/react-test-renderer": "^18.0.0",
+    "cypress": "^9.5.4",
     "husky": "^7.0.4",
     "jest-canvas-mock": "^2.3.1",
     "lint-staged": "^12.3.7",

@@ -1,6 +1,6 @@
 export const data = [
   {
-    id: '0360c930-fe28-4993-b9de-16a24c904bd1',
+    id: '1',
     productName: 'Foxit software PhantomPDF Standard',
     tags: ['PDF', 'Change', 'Create', 'Maintenance', 'Business', 'FoxIT'],
     category: 'Daily Business',
@@ -13,7 +13,7 @@ export const data = [
     option2: 'Without Maintenance'
   },
   {
-    id: '3e06b34d-b1bf-44b7-a690-87bbce00c95c',
+    id: '2',
     productName: 'Foxit Software PhantomPDF Business',
     tags: [],
     category: 'Daily Business',
@@ -26,7 +26,7 @@ export const data = [
     option2: 'Without Maintenance'
   },
   {
-    id: '6f183a4c-6737-4241-94e9-13510c075924',
+    id: '3',
     productName: 'Autodesk AutoCAD 2020.x',
     tags: [
       'Autodesk',
@@ -54,7 +54,7 @@ export const data = [
     option2: 'Without Maintenance'
   },
   {
-    id: 'f1d976be-5201-4549-b2d7-8a555580bd93',
+    id: '4',
     productName: 'TechSmith Snagit',
     tags: ['Screen capture', 'Snipping tool', 'Snagit', 'TechSmith'],
     category: 'Daily Business',
@@ -69,7 +69,7 @@ export const data = [
     option2: 'Without Maintenance'
   },
   {
-    id: '043758cb-c399-4362-9c52-1265c8c25052',
+    id: '5',
     productName: 'TechSmith Camtasia',
     tags: ['TechSmith', 'Camtasia', 'Video Editor', 'Screen recorder'],
     category: 'Daily Business',
@@ -81,7 +81,7 @@ export const data = [
     option2: null
   },
   {
-    id: '68ffe1d7-12b1-4424-95a0-561739d11f44',
+    id: '6',
     productName: 'ZeroTurnaround JRebel',
     tags: ['Java', 'Deployment', 'Zeroturnaround', 'Xrebel'],
     category: 'Developer',
@@ -93,7 +93,7 @@ export const data = [
     option2: 'Renewal for existing user'
   },
   {
-    id: 'dc2b5299-4993-4913-ab9e-af87b0b77055',
+    id: '7',
     productName: 'JetBrains PhpStorm 2020',
     tags: ['JetBrains', 'PhpStorm', 'Code', 'Database', 'Coding', 'Renewal'],
     category: 'Developer',
@@ -105,7 +105,7 @@ export const data = [
     option2: null
   },
   {
-    id: '3dd412c4-fc4c-4feb-aefe-c99124f72c4c',
+    id: '8',
     productName: 'JetBrain ReSharper Ultimate 2020.x',
     tags: ['JetBrains', 'ReSharper', '.NET', 'VisiualStudio', 'Extension', 'Code', 'Coding'],
     category: 'Developer',
@@ -118,7 +118,7 @@ export const data = [
     option2: null
   },
   {
-    id: '7c0ca8d5-8497-4a42-99e9-53ff6ed029a2',
+    id: '9',
     productName: 'Tableau Desktop Professional',
     tags: [
       'Tableau',
@@ -139,7 +139,7 @@ export const data = [
     option2: 'Subscription'
   },
   {
-    id: 'fb92426b-fddc-43b4-9b2e-7e34497e5944',
+    id: '10',
     productName: 'Zoom Meetingroom',
     tags: ['Zoom', 'Meetingrooms', 'Zoomrooms', 'Sharing content'],
     category: 'Daily Business',
